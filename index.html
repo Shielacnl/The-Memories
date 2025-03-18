@@ -54,8 +54,9 @@
             font-weight: bold;
         }
         .page img {
-            width: 80%;
-            max-width: 300px;
+            width: 100%;
+            max-width: 350px;
+            height: auto;
             border-radius: 10px;
             margin-bottom: 10px;
         }
@@ -78,7 +79,7 @@
     </style>
 </head>
 <body>
-    <audio id="bg-music" loop>
+    <audio id="bg-music" autoplay loop>
         <source src="Daniel-Caesar-Get-You.mp3" type="audio/mp3">
         Your browser does not support the audio element.
     </audio>
@@ -116,12 +117,10 @@
             }
         }
         
-        // Ensure background music plays only after interaction
-        document.addEventListener('click', function() {
+        // Ensure background music plays without needing interaction
+        document.addEventListener('DOMContentLoaded', function() {
             const audio = document.getElementById('bg-music');
-            if (audio.paused) {
-                audio.play().catch(error => console.log('Autoplay blocked, user interaction needed.'));
-            }
+            audio.play().catch(error => console.log('Autoplay might be blocked by the browser.'));
         });
     </script>
 </body>
