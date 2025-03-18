@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy 6th Monthsary</title>
+    <title></title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -78,8 +78,8 @@
             cursor: pointer;
             z-index: 100;
         }
-        .prev { left: -60px; }
-        .next { right: -60px; }
+        .prev { left: -80px; }
+        .next { right: -80px; }
     </style>
 </head>
 <body>
@@ -90,7 +90,7 @@
     <div class="book-container">
         <button class="prev" onclick="prevPage()"> ⬅ </button>
         <div class="book" id="book">
-            <div class="page cover">Happy 6th Month's of Love</div>
+            <div class="page cover"></div>
             <div class="page"><img src="2.jpg" alt="First Photo Booth"></div>
             <div class="page"><img src="3.jpg" alt="Second Photo Booth"></div>
             <div class="page"><img src="4.jpg" alt="Third Photo Booth"></div>
@@ -116,10 +116,12 @@
             }
         }
         
-        // Ensure background music plays without needing interaction
-        document.addEventListener('DOMContentLoaded', function() {
+        // Ensure background music plays after user interaction
+        document.addEventListener('click', function() {
             const audio = document.getElementById('bg-music');
-            audio.play().catch(error => console.log('Autoplay might be blocked by the browser.'));
+            if (audio.paused) {
+                audio.play().catch(error => console.log('Autoplay might be blocked by the browser.'));
+            }
         });
     </script>
 </body>
