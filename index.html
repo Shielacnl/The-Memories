@@ -49,13 +49,17 @@
         }
         .cover {
             background: url('1.jpg') no-repeat center/cover;
+            background-size: contain;
             color: white;
             font-size: 30px;
             font-weight: bold;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
         .page img {
-            width: 80%;
-            max-width: 350px;
+            width: 90%;
+            max-width: 500px;
             height: auto;
             border-radius: 10px;
             margin-bottom: 10px;
@@ -86,7 +90,7 @@
     <div class="book-container">
         <button class="prev" onclick="prevPage()"> ⬅ </button>
         <div class="book" id="book">
-            <div class="page cover"><p>The Memories</p></div>
+            <div class="page cover">Happy 6th Month's of Love</div>
             <div class="page"><img src="2.jpg" alt="First Photo Booth"></div>
             <div class="page"><img src="3.jpg" alt="Second Photo Booth"></div>
             <div class="page"><img src="4.jpg" alt="Third Photo Booth"></div>
