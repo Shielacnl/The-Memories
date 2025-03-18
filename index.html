@@ -82,18 +82,21 @@
     </style>
 </head>
 <body>
-    <audio autoplay loop>
+    <audio id="bg-music" autoplay loop>
         <source src="Daniel-Caesar-Get-You.mp3" type="audio/mp3">
         Your browser does not support the audio element.
     </audio>
     <div class="book-container">
         <div class="book" id="book">
-            <div class="page cover">The Memories</div>
+            <div class="page cover"><p>The Memories</p></div>
             <div class="page"><img src="First-pb.jpg" alt="First Photo Booth"><p>"Our first photo booth, kinikilig kapa kasi first kiss ko yan sayo."</p></div>
             <div class="page"><img src="Second-Pb.jpg" alt="Official Couple PB"><p>"Our Official Photo booth as a couple, couple outfit pa tayo nyan, sobrang saya ko that time."</p></div>
             <div class="page"><img src="Third-Pb.jpg" alt="Second Couple PB"><p>"Our second photo booth as a couple, infairness lagi talaga tayo same outfit kapag nag pb, best outfit and fav as of now."</p></div>
             <div class="page"><p>Hi to my beloved baby,</p>
-                <p>Happy 6th Monthsary to us, my love. Thank you for everything that you do for us, thank you for loving me, thank you for accepting my flaws, fang, all of my bad side, thank you for staying and be better for us. I know it's hard sometimes for us because we always have misunderstandings, we even make some mistakes sometimes that would lead to arguments but in the end, we choose to stay and say sorry because we made a mistake. I know it's hard for us right now pero baby, I know someday and we always pray this na makaka ahon tayo from all of this. Thank you for being there for me when no one wants to stay, thank you mahal ko. I love you! Happy 6th Months of love, baby.</p></div>
+                <p>Happy 6th Monthsary to us, my love. Thank you for everything that you do for us, thank you for loving me, thank you for accepting my flaws, fang, all of my bad side, thank you for staying and be better for us. 
+                I know it's hard sometimes for us because we always have misunderstandings, we even make some mistakes sometimes that would lead to arguments but in the end, we choose to stay and say sorry because we made a mistake. 
+                I know it's hard for us right now pero baby, I know someday and we always pray this na makaka ahon tayo from all of this. 
+                Thank you for being there for me when no one wants to stay, thank you mahal ko. I love you! Happy 6th Months of love, baby.</p></div>
         </div>
         <button class="prev" onclick="prevPage()">⬅</button>
         <button class="next" onclick="nextPage()">➡</button>
@@ -113,6 +116,12 @@
                 pages[currentPage].classList.remove('flipped');
             }
         }
+
+        // Ensure background music plays
+        document.addEventListener('DOMContentLoaded', function() {
+            const audio = document.getElementById('bg-music');
+            audio.play().catch(error => console.log('Autoplay blocked, user interaction needed.'));
+        });
     </script>
 </body>
 </html>
